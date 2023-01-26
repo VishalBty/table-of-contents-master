@@ -164,6 +164,11 @@ var tableOfContents = function (content, target, options) {
     // Get the headings
     // If none are found, don't render a list
     headings = contentWrap.querySelectorAll(settings.levels);
+    //exclude heading if it has class m-tags
+    headings = Array.prototype.filter.call(headings, function (heading) {
+      return !heading.classList.contains("m-tags");
+    });
+
     if (!headings.length) return;
 
     // Inject the table of contents

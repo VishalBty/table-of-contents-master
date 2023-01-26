@@ -164,9 +164,9 @@ var tableOfContents = function (content, target, options) {
     // Get the headings
     // If none are found, don't render a list
     headings = contentWrap.querySelectorAll(settings.levels);
-    //exclude heading if it has class m-tags
+    //exclude heading if it has class m-submenu-title
     headings = Array.prototype.filter.call(headings, function (heading) {
-      return !heading.classList.contains("m-tags");
+      return !heading.classList.contains("m-submenu-title");
     });
 
     if (!headings.length) return;
